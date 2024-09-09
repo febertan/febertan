@@ -11,3 +11,5 @@ print(a + b)
 print(20*"*")
 
 print("valami szöveg\nfolytatom")
+
+print("alma","körte","banán")
