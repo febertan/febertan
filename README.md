@@ -1,2 +1,2 @@
-# F-bert-Andr-s
+# febertan
 Fébert András
