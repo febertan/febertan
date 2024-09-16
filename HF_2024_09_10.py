@@ -1,19 +1,3 @@
-print("Hello World!")
-
-a = 10
-b = 4
-c = a + b
-
-print("A(z)", a, "és a(z)", b, "összege:", a)
-
-print(a + b)
-
-print(20*"*")
-
-print("valami szöveg\nfolytatom")
-
-print("alma","körte","banán")
-
 print(23*"1" + 8*"P" + 9*"1" + "\n"
       + 21*"1" + 2*"P" + 8*"'" + 3*"P" + 6*"1" + "\n"
       + 8*"1" + 7*"P" + 4*"1" + 2*"P" + 12*"'" + 2*"P" + 5*"P" + "\n"
