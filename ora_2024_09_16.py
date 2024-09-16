@@ -18,6 +18,8 @@ print('Az életkora:', kor, 'év')
 
 # 2. feladat
 
+print('\n')
+
 print('Kérem adja meg az esemény kezdő időpontjának adatait:')
 
 start_h = int(input("óra:"))
@@ -32,6 +34,8 @@ print(30 * '*')
 print('Az esemény', end_h + ':' + end_m + '-ig tart')
 
 # 3. feladat
+
+print('\n')
 
 belul_s = float(input('Hány km-t tesz meg településen belül?'))  # legnagyobb sebesség szerintem 50 km/h
 kivul_s = float(input('Hány km-t tesz meg településen kívül?'))  # vmax 90 km/h
