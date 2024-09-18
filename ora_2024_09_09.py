@@ -4,7 +4,7 @@ a = 10
 b = 4
 c = a + b
 
-print("A(z)", a, "és a(z)", b, "összege:", a)
+print("A(z)", a, "és a(z)", b, "összege:", c)
 
 print(a + b)
 
