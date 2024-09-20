@@ -45,3 +45,12 @@ print('Az ön testtömegindexe:', tti, '%')
 
 if tti < 18.5:
     print('sovány')
+
+elif 18.5 <= tti < 25:
+    print('normál')
+
+elif 25 <= tti < 30:
+    print('túlsúlyos')
+
+elif 30 <= tti:
+    print('elhízott')
