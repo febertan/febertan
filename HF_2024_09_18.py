@@ -1,19 +1,23 @@
-megadott_ev = int(input('Kérem adjon meg egy évet: '))
+megadott_ev = int(input('Kérem adjon meg egy évszámot 1984 és 2043 között: '))
 
-print(5104 % 1983)
-muvelet = ((megadott_ev % 1984) + 1) % 10
+ev_sorszam = ((megadott_ev % 1984) + 1) % 10
+# működik a megadott tartományon kívül is, csak a feladatba azt mondta, hogy legyen ez megadva
 
-if muvelet == 1 or muvelet == 2:
-    print('zöld')
+if 1984 <= megadott_ev <= 2043:
+        if ev_sorszam == 1 or ev_sorszam == 2:
+                print('zöld')
 
-elif muvelet == 3 or muvelet == 4:
-    print('piros')
+        elif ev_sorszam == 3 or ev_sorszam == 4:
+                print('piros')
 
-elif muvelet == 5 or muvelet == 6:
-    print('sárga')
+        elif ev_sorszam == 5 or ev_sorszam == 6:
+                print('sárga')
 
-elif muvelet == 7 or muvelet == 8:
-    print('fehér')
+        elif ev_sorszam == 7 or ev_sorszam == 8:
+                print('fehér')
 
-elif muvelet == 9 or muvelet == 0:
-    print('fekete')
+        elif ev_sorszam == 9 or ev_sorszam == 0:
+                print('fekete')
+
+else:
+    print('Az évszám nincs a megadott tartományon belül')
