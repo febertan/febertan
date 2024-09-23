@@ -7,7 +7,8 @@ print("Összesen:", evi + adam + kigyo)
 
 print("Összesen:" + str(evi+adam+kigyo))
 
-print("Átlagosan", round((evi + adam + kigyo) / 3),  "almája van 1 főnek" )
+print("Átlagosan", round((evi + adam + kigyo) / 3),  "almája van 1 főnek")
+
 
 print("Átlagosan", round(atlag, 2),  "almája van 1 főnek" )
 
