@@ -18,3 +18,4 @@ else:
     lepes += 1  # nem vagyok benne biztos, hogy ezt is lépésnek kell számolni, de most annak számoltam
 
 print(lepes, 'lépésből érte el az 1-et a megadott szám.')
+
