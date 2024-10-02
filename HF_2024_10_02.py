@@ -12,4 +12,3 @@ oktet1 = int(input('Kérem ajda meg az ipv4 cím első oktetét: '))
 oktet2 = int(input('Kérem ajda meg az ipv4 cím második oktetét: '))
 oktet3 = int(input('Kérem ajda meg az ipv4 cím harmadik oktetét: '))
 oktet4 = int(input('Kérem ajda meg az ipv4 cím negyedik oktetét: '))
-
