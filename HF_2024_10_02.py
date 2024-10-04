@@ -1,54 +1,77 @@
-ip = 0
+def convert_to_bin(szam):
+    maradek = szam % 2
+    egeszresz = szam // 2
+    eredmeny = str(maradek)
+    while egeszresz != 0:
+        maradek = egeszresz % 2
+        egeszresz = egeszresz // 2
+        eredmeny = str(maradek) + eredmeny
 
-# for i in range(4):
-#     i += 1
-#     print('Adja meg egy ipv4-es ip cím', str(i) + '. részét: ', end='')
-#     szam = int(input())
+    hossz = 0
+
+    for _ in eredmeny:  # a pycharm problémázott, hogy a ciklusváltozó nem volt használva, és '_'-at javasolt helyére
+        hossz += 1
+
+    for _ in range(8 - hossz):
+        eredmeny = '0' + eredmeny
 
 
-# print(bin(szam)[2:]) ezt nem tanultuk
 
-oktet1 = int(input('Kérem ajda meg az ipv4 cím első oktetét: '))
-oktet2 = int(input('Kérem ajda meg az ipv4 cím második oktetét: '))
-oktet3 = int(input('Kérem ajda meg az ipv4 cím harmadik oktetét: '))
-oktet4 = int(input('Kérem ajda meg az ipv4 cím negyedik oktetét: '))
+    return eredmeny
 
+menu = int(input('Nyomja meg az 1-es gombot ha az "a" feladatot akarja megnézni,'
+                 ' és nyomja meg a 2-es gombot, ha a "b" feladatot' ))
 
-if 0 < oktet1 < 255 and 0 < oktet2 < 255 and 0 < oktet3 < 255 and 0 < oktet4 < 255:
-    bin_oktet1 = bin(oktet1)[2:]
-    bin_oktet2 = bin(oktet2)[2:]
-    bin_oktet3 = bin(oktet3)[2:]
-    bin_oktet4 = bin(oktet4)[2:]
+if menu == 1:
+    a_oktet1 = int(input('Irj be a 1. oktet értékét az ip címből (0-255): '))
+    a_oktet2 = int(input('Irj be a 2. oktet értékét az ip címből (0-255): '))
+    a_oktet3 = int(input('Irj be a 3. oktet értékét az ip címből (0-255): '))
+    a_oktet4 = int(input('Irj be a 4. oktet értékét az ip címből (0-255): '))
 
-    print(str(bin_oktet1) + '.' + str(bin_oktet2) + '.' + str(bin_oktet3) + '.' + str(bin_oktet4))
+    if 0 <= a_oktet1 <= 255 and 0 <= a_oktet2 <= 255 and 0 <= a_oktet3 <= 255 and 0 <= a_oktet4 <= 255:
+        print('A', str(a_oktet1) + '.' + str(a_oktet2) + '.' + str(a_oktet3) + '.' + str(a_oktet4), 'ipv4 cím kettes számrendszerben kifejezve = ',
+              convert_to_bin(a_oktet1) + '.' + convert_to_bin(a_oktet2) + '.' + convert_to_bin(a_oktet3) + '.' + convert_to_bin(a_oktet4))
+
+    else:
+        print('Hibás input!')
+
+elif menu == 2:
+    ip = input('Kérem adjon meg egy helyes ipv4 címet: ')
+
+    b_oktet = 1
+    b_oktet1 = ''
+    b_oktet2 = ''
+    b_oktet3 = ''
+    b_oktet4 = ''
+
+    for i in ip:
+        if i == '.':
+            b_oktet += 1
+            continue
+
+        if b_oktet == 1:
+            b_oktet1 += i
+
+        if b_oktet == 2:
+            b_oktet2 += i
+
+        if b_oktet == 3:
+            b_oktet3 += i
+
+        if b_oktet == 4:
+            b_oktet4 += i
+
+    b_oktet1 = int(b_oktet1)
+    b_oktet2 = int(b_oktet2)
+    b_oktet3 = int(b_oktet3)
+    b_oktet4 = int(b_oktet4)
+
+    if 0 <= b_oktet1 <= 255 and 0 <= b_oktet2 <= 255 and 0 <= b_oktet3 <= 255 and 0 <= b_oktet4 <= 255:
+        print('A', str(b_oktet1) + '.' + str(b_oktet2) + '.' + str(b_oktet3) + '.' + str(b_oktet4), 'ipv4 cím kettes számrendszerben kifejezve = ',
+              convert_to_bin(b_oktet1) + '.' + convert_to_bin(b_oktet2) + '.' + convert_to_bin(b_oktet3) + '.' + convert_to_bin(b_oktet4))
+
+    else:
+        print('Hibás input!')
 
 else:
-    print('Hibás input!')
-
-# 128 64 32 16 8 4 2 1
-
-bin1_1 = oktet1 // 128
-bin1_2 = oktet1 - bin1_1 * 128
-
-bin1_3 = bin1_2 // 64
-bin1_4 = bin1_2 - bin1_3 * 64
-
-bin1_5 = bin1_4 // 32
-bin1_6 = bin1_4 - bin1_5 * 32
-
-bin1_7 = bin1_6 // 16
-bin1_8 = bin1_6 - bin1_3 * 16
-
-bin1_9 = bin1_8 // 8
-bin1_10 = bin1_8 - bin1_1 * 8
-
-bin1_11 = bin1_10 // 4
-bin1_12 = bin1_10 - bin1_3 * 4
-
-bin1_13 = bin1_12 // 2
-bin1_14 = bin1_12 - bin1_1 * 2
-
-bin1_15 = bin1_14 // 1
-bin1_16 = bin1_14 - bin1_3 * 1
-
-print(str(bin1_1) + str(bin1_3) + str(bin1_5) + str(bin1_7) + str(bin1_9) + str(bin1_11) + str(bin1_13) + str(bin1_15))
+    print('Csak az 1-es és a 2-es között lehet választani!')
