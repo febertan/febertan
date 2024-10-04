@@ -22,6 +22,8 @@ def convert_to_bin(szam):
 menu = int(input('Nyomja meg az 1-es gombot ha az "a" feladatot akarja megnézni,'
                  ' és nyomja meg a 2-es gombot, ha a "b" feladatot' ))
 
+# A feladat
+
 if menu == 1:
     a_oktet1 = int(input('Irj be a 1. oktet értékét az ip címből (0-255): '))
     a_oktet2 = int(input('Irj be a 2. oktet értékét az ip címből (0-255): '))
@@ -34,6 +36,8 @@ if menu == 1:
 
     else:
         print('Hibás input!')
+
+# B feladat
 
 elif menu == 2:
     ip = input('Kérem adjon meg egy helyes ipv4 címet: ')
