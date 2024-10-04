@@ -15,8 +15,6 @@ def convert_to_bin(szam):
     for _ in range(8 - hossz):
         eredmeny = '0' + eredmeny
 
-
-
     return eredmeny
 
 menu = int(input('Nyomja meg az 1-es gombot ha az "a" feladatot akarja megnézni,'
