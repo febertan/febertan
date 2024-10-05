@@ -1,4 +1,12 @@
-def convert_to_bin(szam):
+def oktet_check(oktet):
+    if not oktet.isdigit():
+        return False
+
+    oktet = int(oktet)
+    return 0 <= oktet <= 255
+
+def convert_to_bin(szam, maxhossz = 8):
+    szam = int(szam)
     maradek = szam % 2
     egeszresz = szam // 2
     eredmeny = str(maradek)
@@ -12,7 +20,7 @@ def convert_to_bin(szam):
     for _ in eredmeny:  # a pycharm problémázott, hogy a ciklusváltozó nem volt használva, és '_'-at javasolt helyére
         hossz += 1
 
-    for _ in range(8 - hossz):
+    for _ in range(maxhossz - hossz):
         eredmeny = '0' + eredmeny
 
     return eredmeny
@@ -23,17 +31,16 @@ menu = int(input('Nyomja meg az 1-es gombot ha az "a" feladatot akarja megnézni
 # A feladat
 
 if menu == 1:
-    a_oktet1 = int(input('Irj be a 1. oktet értékét az ip címből (0-255): '))
-    a_oktet2 = int(input('Irj be a 2. oktet értékét az ip címből (0-255): '))
-    a_oktet3 = int(input('Irj be a 3. oktet értékét az ip címből (0-255): '))
-    a_oktet4 = int(input('Irj be a 4. oktet értékét az ip címből (0-255): '))
+    a_oktet1 = input('Irj be a 1. oktet értékét az ip címből (0-255): ')
+    a_oktet2 = input('Irj be a 2. oktet értékét az ip címből (0-255): ')
+    a_oktet3 = input('Irj be a 3. oktet értékét az ip címből (0-255): ')
+    a_oktet4 = input('Irj be a 4. oktet értékét az ip címből (0-255): ')
 
-    if 0 <= a_oktet1 <= 255 and 0 <= a_oktet2 <= 255 and 0 <= a_oktet3 <= 255 and 0 <= a_oktet4 <= 255:
+    if oktet_check(a_oktet1) and oktet_check(a_oktet2) and oktet_check(a_oktet3) and oktet_check(a_oktet4):
         print('A', str(a_oktet1) + '.' + str(a_oktet2) + '.' + str(a_oktet3) + '.' + str(a_oktet4), 'ipv4 cím kettes számrendszerben kifejezve = ',
-              convert_to_bin(a_oktet1) + '.' + convert_to_bin(a_oktet2) + '.' + convert_to_bin(a_oktet3) + '.' + convert_to_bin(a_oktet4))
-
+              convert_to_bin(a_oktet1) + '.' + convert_to_bin(a_oktet2, 16) + '.' + convert_to_bin(a_oktet3) + '.' + convert_to_bin(a_oktet4))
     else:
-        print('Hibás input!')
+        print('Hibás Input!')
 
 # B feladat
 
@@ -63,12 +70,7 @@ elif menu == 2:
         elif b_oktet == 4:
             b_oktet4 += i
 
-    b_oktet1 = int(b_oktet1)
-    b_oktet2 = int(b_oktet2)
-    b_oktet3 = int(b_oktet3)
-    b_oktet4 = int(b_oktet4)
-
-    if 0 <= b_oktet1 <= 255 and 0 <= b_oktet2 <= 255 and 0 <= b_oktet3 <= 255 and 0 <= b_oktet4 <= 255:
+    if oktet_check(b_oktet1) and oktet_check(b_oktet2) and oktet_check(b_oktet3) and oktet_check(b_oktet4):
         print('A', str(b_oktet1) + '.' + str(b_oktet2) + '.' + str(b_oktet3) + '.' + str(b_oktet4), 'ipv4 cím kettes számrendszerben kifejezve = ',
               convert_to_bin(b_oktet1) + '.' + convert_to_bin(b_oktet2) + '.' + convert_to_bin(b_oktet3) + '.' + convert_to_bin(b_oktet4))
 
