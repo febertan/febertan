@@ -1,19 +1,19 @@
 # 1. feladat
 
-# a = int(input('Kérem adjon meg egy pozitív egész számot: '))
-# b = int(input('Kérem adjon meg egy pozitív egész számot: '))
-#
-# if a % 2 != 0:
-#     a += 1
-#
-# c = a
-#
-# print(c, end= '')
-# c += 2
-#
-# while c < b:
-#     print('-' + str(c), end= '')
-#     c += 2
+a = int(input('Kérem adjon meg egy pozitív egész számot: '))
+b = int(input('Kérem adjon meg egy pozitív egész számot: '))
+
+if a % 2 != 0:
+    a += 1
+
+c = a
+
+print(c, end= '')
+c += 2
+
+while c < b:
+    print('-' + str(c), end= '')
+    c += 2
 
 # 2. feladat
 
@@ -29,3 +29,4 @@ while szam <= 10:
 eredmeny -= szam
 print('Az utolsó szám nem', str(szam) + ', nem <10-nél.')
 print('A 10-nél kisebb számok összege:', eredmeny)
+
