@@ -19,8 +19,13 @@
 
 szam = 0
 i = 1
+eredmeny = 0
 
-while szam < 10:
-    szam = int(input('Kérem adja meg a(z) ', str(i) + '.', '10-nél kisebb számot: '))
+while szam <= 10:
+    szam = int(input('Kérem adja meg a(z) ' + str(i) + '.' + ' 10-nél kisebb számot: '))
     i += 1
-# EZ MÉG NEM JÓ!
+    eredmeny += szam
+
+eredmeny -= szam
+print('Az utolsó szám nem', str(szam) + ', nem <10-nél.')
+print('A 10-nél kisebb számok összege:', eredmeny)

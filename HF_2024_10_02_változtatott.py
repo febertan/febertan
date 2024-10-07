@@ -5,7 +5,8 @@ def oktet_check(oktet):
     oktet = int(oktet)
     return 0 <= oktet <= 255
 
-def convert_to_bin(szam, maxhossz = 8):
+
+def convert_to_bin(szam, maxhossz=8):
     szam = int(szam)
     maradek = szam % 2
     egeszresz = szam // 2
@@ -25,6 +26,7 @@ def convert_to_bin(szam, maxhossz = 8):
 
     return eredmeny
 
+
 menu = int(input('Nyomja meg az 1-es gombot ha az "a" feladatot akarja megnézni,'
                  ' és nyomja meg a 2-es gombot, ha a "b" feladatot '))
 
@@ -37,8 +39,10 @@ if menu == 1:
     a_oktet4 = input('Irj be a 4. oktet értékét az ip címből (0-255): ')
 
     if oktet_check(a_oktet1) and oktet_check(a_oktet2) and oktet_check(a_oktet3) and oktet_check(a_oktet4):
-        print('A', str(a_oktet1) + '.' + str(a_oktet2) + '.' + str(a_oktet3) + '.' + str(a_oktet4), 'ipv4 cím kettes számrendszerben kifejezve = ',
-              convert_to_bin(a_oktet1) + '.' + convert_to_bin(a_oktet2, 16) + '.' + convert_to_bin(a_oktet3) + '.' + convert_to_bin(a_oktet4))
+        print('A', str(a_oktet1) + '.' + str(a_oktet2) + '.' + str(a_oktet3) + '.' + str(a_oktet4),
+              'ipv4 cím kettes számrendszerben kifejezve = ',
+              convert_to_bin(a_oktet1) + '.' + convert_to_bin(a_oktet2, 16)
+              + '.' + convert_to_bin(a_oktet3) + '.' + convert_to_bin(a_oktet4))
     else:
         print('Hibás Input!')
 
@@ -71,8 +75,10 @@ elif menu == 2:
             b_oktet4 += i
 
     if oktet_check(b_oktet1) and oktet_check(b_oktet2) and oktet_check(b_oktet3) and oktet_check(b_oktet4):
-        print('A', str(b_oktet1) + '.' + str(b_oktet2) + '.' + str(b_oktet3) + '.' + str(b_oktet4), 'ipv4 cím kettes számrendszerben kifejezve = ',
-              convert_to_bin(b_oktet1) + '.' + convert_to_bin(b_oktet2) + '.' + convert_to_bin(b_oktet3) + '.' + convert_to_bin(b_oktet4))
+        print('A', str(b_oktet1) + '.' + str(b_oktet2) + '.' + str(b_oktet3) + '.' + str(b_oktet4),
+              'ipv4 cím kettes számrendszerben kifejezve = ',
+              convert_to_bin(b_oktet1) + '.' + convert_to_bin(b_oktet2)
+              + '.' + convert_to_bin(b_oktet3) + '.' + convert_to_bin(b_oktet4))
 
     else:
         print('Hibás input!')
