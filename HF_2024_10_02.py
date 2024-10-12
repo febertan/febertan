@@ -77,3 +77,4 @@ elif menu == 2:
 
 else:
     print('Csak az 1-es és a 2-es között lehet választani!')
+
