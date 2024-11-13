@@ -1,3 +1,8 @@
+def bekeres():
+    while 0 < targy <= 5:
+        targy = int(input('Kérem adjon meg egy jegyet (1-5), kilépéshez nyomja meg a 0-t: '))
+    return targy
+
 def atlag(atlag_list):
     osszeg = 0
 
@@ -19,12 +24,20 @@ while 0 < matek <= 5:
     if matek != 0:
         matek_list.append(matek)
 
+print()
+print('A matek átlaga:', atlag(matek_list))
+print()
+
 magyar = 1
 
 while 0 < magyar <= 5:
     magyar = int(input('Kérem adja meg a magyar jegyeit (1-5) enterrel elválasztva, ha vége nyomjon 0-t: '))
     if magyar != 0:
         magyar_list.append(magyar)
+
+print()
+print('A magyar átlaga:', atlag(magyar_list))
+print()
 
 tori = 1
 
@@ -33,7 +46,7 @@ while 0 < tori <= 5:
     if tori != 0:
         tori_list.append(tori)
 
+print()
+print('A töri átlaga:', atlag(tori_list))
 
-print(atlag(matek_list))
-print(atlag(magyar_list))
-print(atlag(tori_list))
+# a bekérést be kell rakni egy függvénybe majd
