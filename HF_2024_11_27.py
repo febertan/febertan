@@ -1,11 +1,11 @@
 # B) feladat
 def primszam_fg(szam):
-    i = 1
+    i = 2
     a = 0
 
     if szam > 0:
         while i < ((szam / 2) + 1):
-            if szam % i == 0 and i != 1:
+            if szam % i == 0:
                 a += 1
 
             i += 1
@@ -109,7 +109,7 @@ else:
 
 print('4. feladat: ELső hárommal osztható szám:', str(harommal_oszthato) + ', első öttel osztható szám:', ottel_oszhato)
 
-print('5. feladat:', round(atlag / len(t2), 2)) # ha jól tudom, a számtani közép a számok átlaga
+print('5. feladat:', round(atlag / len(t2), 2)) # ha jól tudom, a számtani közép a számok átlaga, és 2-re kerekítettem
 
 if kobszam is True:
     print('6. feladat: Igaz')
