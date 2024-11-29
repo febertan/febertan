@@ -99,7 +99,7 @@ for elem in t2:
 
 print('1. feladat:', j, 'eleme van.')
 
-print('2. feladat:', j)
+print('2. feladat:', masodik)
 
 if harmadik is True:
     print('3. feladat: Igaz')
