@@ -1,6 +1,3 @@
-from HF_2024_11_27 import tizedik
-
-
 def elso(lista):
     return len(lista)
 
@@ -82,21 +79,21 @@ def nyolcadik_fg(elozo, szam):
 
 
 def kilencedi_fg(szam):
-    i = 2
-    a = 0
+    a= 2
+    b = 0
 
     if szam > 0:
-        while i < ((szam / 2) + 1):
-            if szam % i == 0:
-                a += 1
+        while a < ((szam / 2) + 1):
+            if szam % a == 0:
+                b += 1
 
-            i += 1
+            a += 1
 
 
     else:
         return False
 
-    if a == 0:
+    if b == 0:
         return True
 
     else:
