@@ -75,14 +75,12 @@ for elem in t2:
     negyzetgyok = 0
     hetedik_szam = elem
 
-    if hetedik_szam < 0:
-        hetedik_szam *= -1
+    if hetedik_szam > 0:
+        while hetedik_szam >= negyzetgyok:
+            if negyzetgyok ** 2 == hetedik_szam:
+                negyzetszam.append(negyzetgyok)
 
-    while hetedik_szam >= negyzetgyok:
-        if negyzetgyok ** 2 == hetedik_szam:
-            negyzetszam.append(negyzetgyok)
-
-        negyzetgyok += 1
+            negyzetgyok += 1
 
     if nyolcadik == False and last_elem > 0 and elem == 0:
         nyolcadik = True
@@ -97,7 +95,7 @@ for elem in t2:
         legnagyobb = elem
 
 
-print('1. feladat:', j, 'eleme van.')
+print('1. feladat:', len(t2), 'eleme van.')
 
 print('2. feladat:', masodik)
 
