@@ -187,4 +187,4 @@ for k in range(1, len(kilencedik)):
 
 print('9. feladat:', kilencedik_eredmeny)
 
-print('10. feladat:', tizedik_fg(t2))
+print('10. feladat:', tizedik_fg(t2))  
