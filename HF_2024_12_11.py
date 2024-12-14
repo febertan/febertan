@@ -5,7 +5,7 @@ datum_list = input('Kérem adja meg a születési dátumát (ÉÉÉÉ.HH.NN): ')
 
 szamok = []
 
-for elem in datum_list:  # nem voltam benne biztos, hogy nem úgy kell bekérni, hogy hónapot számmal is lehet kérni
+for elem in datum_list:  # nem voltam benne biztos, hogy a hónapot számmal vagy betűvel kell-e bekérni
     if elem.isdigit():
         szamok.append(elem)
 
