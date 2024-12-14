@@ -87,7 +87,7 @@ for elem in t2:
 
     last_elem = elem
 
-    if primszam_fg(elem) is True and elem != 1:
+    if elem > 0 and primszam_fg(elem) is True and elem != 1:
         primszam.append(elem)
 
     if elem > legnagyobb:
