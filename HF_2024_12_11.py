@@ -1,8 +1,7 @@
 honapok = ['január', 'február', 'március', 'április', 'május', 'június', 'július', 'augusztus',
            'szeptember', 'október', 'november', 'december']
 
-datum_list = input('Kérem adja meg a születési dátumát (ÉÉÉÉ.HH.NN): ').split('.', 2)
-
+datum_list = input('Kérem adja meg a születési dátumát (ÉÉÉÉ. HH. NN): ').split('. ', 2)
 szamok = []
 
 for elem in datum_list:  # nem voltam benne biztos, hogy a hónapot számmal vagy betűvel kell-e bekérni
@@ -10,7 +9,7 @@ for elem in datum_list:  # nem voltam benne biztos, hogy a hónapot számmal vag
         szamok.append(elem)
 
     else:
-        hanyadik = honapok.index(elem) + 1
+        hanyadik = honapok.index(elem.lower()) + 1
         if  hanyadik < 10:
             szamok.append('0' + str(hanyadik))
 
