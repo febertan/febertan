@@ -37,7 +37,7 @@ def elso(tagok):
 
 def masodik(tagok):
     print()
-    print('A következő országok fővárosának a neve kezdődik B-vel:')
+    print('A következő ország(ok) fővárosának a neve kezdődik B-vel:')
     for elem in tagok:
         if (elem[1][0]).capitalize() == 'B':
             print(elem[0])
