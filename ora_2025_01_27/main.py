@@ -36,16 +36,41 @@ def elso(tagok):
 
 
 def masodik(tagok):
+    print()
+    print('A következő országok fővárosának a neve kezdődik B-vel:')
     for elem in tagok:
         if (elem[1][0]).capitalize() == 'B':
             print(elem[0])
 
 
 def harmadik(tagok):
+    print()
     orszagok = []
+    short = [tagok[0][0]]
 
     for elem in tagok:
         orszagok.append(elem[0])
+
+    for elem in orszagok:
+        if len(elem) < len(short[0]):
+            short = [elem]
+
+        elif len(elem) == len(short[0]):
+            short.append(elem)
+
+    print('A legrövidebb nevű ország(ok):')
+    for elem in short:
+        print(elem, end=' ')
+
+    print()
+
+
+def negyedik(tagok):
+    print()
+    print('A következő országoknak áll 6 betűből a főrvárosuk neve:')
+    for elem in tagok:
+        if len(elem[1]) == 6:
+            print(elem[0], elem[1])
 
 
 # print('EU fővárosok:')
@@ -55,3 +80,4 @@ def harmadik(tagok):
 elso(adattarolas_2())
 masodik(adattarolas_2())
 harmadik(adattarolas_2())
+negyedik(adattarolas_2())
