@@ -35,8 +35,23 @@ def elso(tagok):
     print(i, 'darab alapítóországa van az EU-nak')
 
 
+def masodik(tagok):
+    for elem in tagok:
+        if (elem[1][0]).capitalize() == 'B':
+            print(elem[0])
+
+
+def harmadik(tagok):
+    orszagok = []
+
+    for elem in tagok:
+        orszagok.append(elem[0])
+
+
 # print('EU fővárosok:')
 # for elem in adattarolas_2():
 #     print(elem[1], end=', ')
 
 elso(adattarolas_2())
+masodik(adattarolas_2())
+harmadik(adattarolas_2())
