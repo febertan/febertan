@@ -13,19 +13,23 @@ def data():
 
 
 def nevek(adat):
-    nevek = []
+    nev = []
 
     for elem in adat:
-        if elem[3] not in nevek:
-            nevek.append(elem[3])
+        if elem[3] not in nev:
+            nev.append(elem[3])
 
-    return nevek
+    nev.sort()
+
+    return nev
 
 
-def elso(nevek):
+def elso(emberek):
+    print('1. feladat')
     i = 0
+    j = 0
 
-    for elem in nevek:
+    for elem in emberek:
         if i == 0:
             print(elem, end='')
             i += 1
@@ -33,35 +37,60 @@ def elso(nevek):
         else:
             print(',', elem, end='')
 
+        j += 1
+
+    print(', ' + str(j) + 'db')
     print()
 
 
-def masodik(adat, nevek):
+def masodik(adat, emberek):
+    print('2. feladat')
+    ki = ''
     legtobb = 0
-    nev = []
-    i = 0
+    for nev in emberek:
+        adasok = 0
+        for ember in adat:
+            if ember[3] == nev:
+                adasok += int(ember[2])
 
+        if adasok > legtobb:
+            legtobb = adasok
+            ki = nev
 
-    for elem in adat:
+        elif adasok == legtobb:
+            ki += nev
 
-
-
-    # for elem in adat:
-    #     if int(elem[2]) > legtobb:
-    #         legtobb = int(elem[2])
-    #
-    # for elem in adat:
-    #     if int(elem[2]) == legtobb:
-    #         nev.append(elem[3])
-
-
-    print(nev, legtobb)
+    print(ki + ',', legtobb, 'adással \n')
 
 
 def harmadik(adat):
-    print(adat[0][3])
+    print('3. feladat')
+    ido = 24 * (60 ** 2)
+    ki = ''
+
+    for elem in adat:
+        szamitas = ((int(elem[0]) * (60 ** 2)) + (int(elem[1]) * 60) + int(elem[2]))
+
+        if szamitas < ido:
+            ki = elem[3]
+            ido = szamitas
+
+    print(ki, '\n')
+
+
+def negyedik(adat, emberek):
+    print('4. feladat')
+
+    for nev in emberek:
+        adasok = 0
+        for ember in adat:
+            if ember[3] == nev:
+                adasok += int(ember[2])
+
+        print(nev, adasok)
 
 
 elso(nevek(data()))
 masodik(data(), nevek(data()))
 harmadik(data())
+negyedik(data(), nevek(data()))
