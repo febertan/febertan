@@ -1,3 +1,16 @@
+def to_float(szam):
+    eredmeny = ''
+
+    for char in szam:
+        if char == ',':
+            eredmeny += '.'
+
+        else:
+            eredmeny += char
+
+    return float(eredmeny)
+
+
 def data():
     adat = []
     i = 0
@@ -45,9 +58,28 @@ def cimkulon(adat):
         row.insert(0,varos)
         uj_adat.append(row)
 
-    print(uj_adat)
+    return uj_adat
 
 
-cimkulon(data())
+def terulet(data):
+    i = 0
+    last_row = []
+    new_last_row = []
+
+    for row in data:
+        i += 1
+
+        if last_row[1] == row[1]:
+            terulet = to_float(last_row[5]) + to_float(row[5])
+
+            del last_row[5]
+
+            new_last_row = last_row.insert(5, '')  # ezt megoldani, hogy csak az utolsó sorban legyen ott a terület, ez még nem teljes
+
+        last_row = row
+
+
+terulet(cimkulon(data()))
+
 
 # szam eltárolása egy lefutásig, és ha ugyan az mint az előző terület összeadása
