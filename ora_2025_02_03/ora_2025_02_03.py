@@ -40,7 +40,7 @@ def harmadik(data_harmadik):
 
     for elem in data_harmadik:
         for elem2 in elem:
-            if elem2 not in nemszo: # nincs tesztelve
+            if elem2 not in nemszo:  # nincs tesztelve
                 darab += 1
 
     print(darab)
