@@ -70,6 +70,9 @@ def beker(_kulcsok, _szoveg):
     for i in range(len(_kulcsok)):
         ember[_kulcsok[i]] = input('Kérem adja meg a ' + _szoveg[i] + ':')
 
+
+
+
     return ember
 
 
@@ -77,15 +80,39 @@ def elso_feladat():
     kulcsok = ['nev', 'matek', 'magyar', 'tori']
     szoveg = ['nevét', 'matek jegyét', 'magyar jegyét', 'töri jegyét', ]
     osztaly = []
-    ember = {}
+    matek_atlag = 0
+    i = 0
 
-    for i in range(2):
+    while True:
         print()
         print(f'{i + 1}. tanuló adatai')
         print(30 * '_')
-        osztaly.append(beker(kulcsok, szoveg))
+        ember = beker(kulcsok, szoveg)
+        print(ember)
+        jegyek = [1, 2, 3, 4, 5]
+
+        if ember['nev'] == '':
+            break
+
+        if int(ember['matek']) not in jegyek or int(ember['magyar']) not in jegyek or int(ember['tori']) not in jegyek:
+            print('Hibás input!')
+
+
+        else:
+            osztaly.append(ember)
+
+        i += 1
 
     print(osztaly)
+
+    for elem in osztaly:
+        print()
+        print(elem['nev'], 'átlaga:', (int(elem['matek']) + int(elem['magyar']) + int(elem['tori'])) / (len(elem) - 1))
+        matek_atlag += int(elem['matek'])
+
+    print()
+    print('Az osztály matek átlaga:', matek_atlag / (len(osztaly)))
+
 
 # elso()
 # masodik()
