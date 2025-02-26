@@ -70,9 +70,6 @@ def beker(_kulcsok, _szoveg):
     for i in range(len(_kulcsok)):
         ember[_kulcsok[i]] = input('Kérem adja meg a ' + _szoveg[i] + ':')
 
-
-
-
     return ember
 
 
@@ -96,7 +93,6 @@ def elso_feladat():
 
         if int(ember['matek']) not in jegyek or int(ember['magyar']) not in jegyek or int(ember['tori']) not in jegyek:
             print('Hibás input!')
-
 
         else:
             osztaly.append(ember)
