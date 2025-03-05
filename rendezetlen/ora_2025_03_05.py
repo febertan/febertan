@@ -33,7 +33,7 @@ def masodik():
     konyv = {}
 
     while True:
-        # itt van a probléma, hogy a listában üres lesz a szerzo
+        # itt van a probléma, hogy a listában üres lesz a szerzo, ha a dictionary bent van a ciklusban ez nem probléma
         konyv['szerző'] = input('Kérem adjon meg egy szerzőt, hagyja üresen a kilépéshez: ')
 
         if konyv['szerző'] == '':
