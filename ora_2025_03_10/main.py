@@ -24,6 +24,8 @@ def elso():
     else:
         print('Nem páros')
 
+    print()
+
 
 def darabolas(nev):
     ekezet = ['á', 'é', 'í', 'ó', 'ö', 'ő', 'ú', 'ü', 'ú']
@@ -43,6 +45,8 @@ def darabolas(nev):
 
 
 def email(vezeteknev, keresztnev, osztaly):
+    print('2. feladat')
+
     vez = darabolas(vezeteknev.lower())
     ker = darabolas(keresztnev.lower())
     oszt = osztaly.split('.')
@@ -50,8 +54,11 @@ def email(vezeteknev, keresztnev, osztaly):
 
     print(f'{vez}.{ker}.tech{kezdes_ev}{oszt[1].lower()}@bolyaimovar.com')
 
+    print()
 
 def harmadik_b(hegyek):
+    print('3. feladat')
+
     legkisebb = 10000
     legkisebb_nev = ''
 
@@ -80,8 +87,8 @@ def harmadik_d(hegyek):
                 hegyek_borzsonynel.write(row[0] + ' ' + row[1] + ' ' + row[2] + '\n')
 
 
-# elso()
-# email(vezeteknev='Buga', keresztnev='Jakab', osztaly='12.B')
-# harmadik_b(adat())
-# harmadik_c(adat())
+elso()
+email(vezeteknev='Buga', keresztnev='Jakab', osztaly='12.B')
+harmadik_b(adat())
+harmadik_c(adat())
 harmadik_d(adat())
