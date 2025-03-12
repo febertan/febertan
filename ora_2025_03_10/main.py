@@ -74,10 +74,14 @@ def harmadik_c(hegyek):
 
 
 def harmadik_d(hegyek):
-
+    with open('borzony.txt', 'w', encoding='utf-8') as hegyek_borzsonynel:
+        for row in hegyek:
+            if row[1] == 'Börzsöny':
+                hegyek_borzsonynel.write(row[0] + ' ' + row[1] + ' ' + row[2] + '\n')
 
 
 # elso()
-email(vezeteknev='Buga', keresztnev='Jakab', osztaly='12.B')
-harmadik_b(adat())
-harmadik_c(adat())
+# email(vezeteknev='Buga', keresztnev='Jakab', osztaly='12.B')
+# harmadik_b(adat())
+# harmadik_c(adat())
+harmadik_d(adat())
