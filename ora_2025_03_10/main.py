@@ -56,6 +56,7 @@ def email(vezeteknev, keresztnev, osztaly):
 
     print()
 
+
 def harmadik_b(hegyek):
     print('3. feladat')
 
