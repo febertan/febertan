@@ -1,14 +1,20 @@
 def to_float(szam):
     eredmeny = ''
 
-    for char in szam:
-        if char == ',':
-            eredmeny += '.'
+    if szam != '':
+        for char in szam:
+            if char == ',':
+                eredmeny += '.'
 
-        else:
-            eredmeny += char
+            else:
+                eredmeny += char
 
-    return float(eredmeny)
+    print(eredmeny)
+    if eredmeny != '':
+        return float(eredmeny)
+
+    else:
+        return ''
 
 
 def data():
@@ -58,19 +64,20 @@ def cimkulon(adat):
         row.insert(0,varos)
         uj_adat.append(row)
 
+    # print(uj_adat)
     return uj_adat
 
 
 def terulet(data):
     i = 0
-    last_row = []
+    last_row = data[0][1]
     new_last_row = []
 
     for row in data:
         i += 1
 
         if last_row[1] == row[1]:
-            terulet = to_float(last_row[5]) + to_float(row[5])
+            t = to_float(last_row[5]) + to_float(row[5]) # float izé stringer is ad vissza ('')
 
             del last_row[5]
 
