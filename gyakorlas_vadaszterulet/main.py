@@ -77,7 +77,7 @@ def terulet(data):
         i += 1
 
         if last_row[1] == row[1]:
-            t = to_float(last_row[5]) + to_float(row[5]) # float izé stringer is ad vissza ('')
+            t = to_float(last_row[5]) + to_float(row[5]) # float izé stringet is ad vissza ('')
 
             del last_row[5]
 
