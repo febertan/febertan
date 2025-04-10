@@ -24,8 +24,7 @@ def broadcast_cim(i, elso, ip, mask_oktet):
         else:
             broadcast_oktets.append('255')
 
-    print('A hálózat szórási címe:',
-          broadcast_oktets[0] + '.' + broadcast_oktets[1] + '.' + broadcast_oktets[2] + '.' + broadcast_oktets[3])
+    print('A hálózat szórási címe:', '.'.join(broadcast_oktets))
 
 
 def halozati_cim(ip, mask):
@@ -57,8 +56,7 @@ def halozati_cim(ip, mask):
         else:
             halozati_ipcim.append('0')
 
-    print('A hálózati azonosító címe:',
-          halozati_ipcim[0] + '.' + halozati_ipcim[1] + '.' + halozati_ipcim[2] + '.' + halozati_ipcim[3])
+    print('A hálózati azonosító címe:', '.'.join(halozati_ipcim))
 
     broadcast_cim(i, int(halozati_oktet, 2), ip, mask[i])
 
@@ -94,9 +92,12 @@ def ip():
     prefix = utolso[1]
 
     subnet_mask = mask(prefix)
+    mask_str = []
 
-    print('Az alhálózati maszk:',
-          str(subnet_mask[0]) + '.' + str(subnet_mask[1]) + '.' + str(subnet_mask[2]) + '.' + str(subnet_mask[3]))
+    for elem in subnet_mask:
+        mask_str.append(str(elem))
+
+    print('Az alhálózati maszk:', '.'.join(mask_str))
 
     halozati_cim(oktetek, subnet_mask)
     number_of_addresses(int(prefix))
