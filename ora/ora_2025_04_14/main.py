@@ -96,23 +96,26 @@ def hatodik(osveny):
 
         for row in osveny:
             for char in row:
+                mezo = ''
+
                 if char == 'E':
-                    sor.append(i)
-                    sor.append('E')
+                    mezo = f'{i}.mező: E'
 
                 if char == 'V':
-                    sor.append(i)
-                    sor.append('V')
+                    mezo = f'{i}.mező: V'
 
-            i += 1
+                if len(mezo) > 0:
+                    sor.append(mezo)
 
-        if len(sor) > 0:
-            file.write(f'{sor[0]}. mező, {sor[1]}')
+                print(sor)
 
+                i += 1
+        for elem in sor:
+            file.write(elem + '\n')
 
 
 masodik()
 harmadik(osvenyek())
 adatok = negyedik(osvenyek())  # osveny szama, jatekosok szama
 otodik(osvenyek(), adatok)
-hatodik(osvenyek()[adatok[0]])  # ez még nem jó
+hatodik(osvenyek()[adatok[0]])

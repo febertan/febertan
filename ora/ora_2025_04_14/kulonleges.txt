@@ -1,0 +1,16 @@
+6.mező: V
+15.mező: V
+24.mező: E
+44.mező: E
+65.mező: E
+82.mező: V
+89.mező: V
+96.mező: E
+107.mező: V
+127.mező: V
+139.mező: V
+148.mező: E
+160.mező: V
+167.mező: E
+178.mező: E
+190.mező: E
